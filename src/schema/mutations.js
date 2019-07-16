@@ -12,7 +12,7 @@ module.exports = new GraphQLObjectType({
 
         //for Student
         addStudent:  studentMutation.addStudent,
-        updateStudednt: studentMutation.updateStudent
+        updateStudent: studentMutation.updateStudent
         
 
     }
