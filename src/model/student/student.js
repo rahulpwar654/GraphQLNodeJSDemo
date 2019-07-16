@@ -1,13 +1,13 @@
 const DAO = require('../../lib/dao')
 const mySQLWrapper = require('../../lib/mysqlWrapper')
 
-class Bacon extends DAO {
+class Student extends DAO {
 
     /**
      * Overrides TABLE_NAME with this class' backing table at MySQL
      */
     static get TABLE_NAME() {
-        return 'bacons'
+        return 'student'
     }
 
     /**
@@ -26,19 +26,22 @@ class Bacon extends DAO {
         if (Object.keys(fields).length === 0) return this.findAll()
         
         // Find matching bacons
-        return this.findByFields({fields})
+        return this.findByFields({
+            fields
+        })
     }
 
     /**
      * Creates a new bacon
      */
-    static async createEntry(_, {type, price}) {
+    static async createEntry(_, {firstname, lastname,collegeid}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
             let _result = await this.insert(connection, {
                 data: {
-                    type,
-                    price
+                    firstname,
+                    lastname,
+                    collegeid
                 }
             })
 
@@ -52,15 +55,16 @@ class Bacon extends DAO {
     /**
      * Updates a bacon 
      */
-    static async updateEntry(_, {id, type, price}) {
+    static async updateEntry(_, {id, firstname, lastname,collegeid}) {
         const connection = await mySQLWrapper.getConnectionFromPool()
         try {
 
             await this.update(connection, {
                 id,
                 data: {
-                    type,
-                    price
+                    firstname,
+                    lastname,
+                    collegeid
                 }
             })
 
@@ -72,4 +76,4 @@ class Bacon extends DAO {
     }
 }
 
-module.exports = Bacon
+module.exports = Student

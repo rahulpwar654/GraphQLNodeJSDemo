@@ -60,6 +60,9 @@ class DAO {
             params.push(limit)
         }
 
+        //print params.toString
+        console.log("Base Query:"+baseQuery+ " \nDAO params :"+params)
+
         return mysql.createQuery({
             query: baseQuery,
             params

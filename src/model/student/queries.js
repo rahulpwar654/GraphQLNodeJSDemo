@@ -1,32 +1,36 @@
 const { GraphQLList,
         GraphQLID,
+        GraphQLInt,
         GraphQLString,
         GraphQLFloat } = require('graphql')
 const GraphQLObjecttype = require('./type')
 const mutation = require('./mutations')
-const Bacon = require("./bacon")
+const Student = require("./student")
 
 // Defines the queries
 module.exports = {
-    bacons: {
+    getStudent: {
         type: new GraphQLList(GraphQLObjecttype),
         args: {
-            type: {
+            firstname: {
                 type: GraphQLString
             },
-            price: {
-                type: GraphQLFloat
+            lastname: {
+                type: GraphQLString
+            },
+            collegeid:{
+                type: GraphQLInt
             }
         },
-        resolve: Bacon.findMatching.bind(Bacon)
+        resolve: Student.findMatching.bind(Student)
     },
-    bacon: {
+    getStudentByID: {
         type:GraphQLObjecttype,
         args: {
             id: {
                 type: GraphQLID
             }
         },
-        resolve: Bacon.getByID.bind(Bacon)
+        resolve: Student.getByID.bind(Student)
     }
 }
