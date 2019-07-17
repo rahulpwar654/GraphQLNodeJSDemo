@@ -28,4 +28,5 @@ module.exports = {
         },
         resolve: Bacon.updateEntry.bind(Bacon)
     }
+    
 }

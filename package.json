@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
-  }, 
+  },
   "keywords": [
     "nodejs",
     "example",
@@ -16,13 +16,15 @@
     "wrapper"
   ],
   "author": "Rahul Pawar",
-  "license": "MIT",  
-  
+  "license": "MIT",
   "dependencies": {
+    "apollo-server-express": "^1.4.0",
     "body-parser": "^1.17.2",
+    "cors": "^2.8.4",
     "express": "^4.15.3",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^3.1.1",
     "express-graphql": "^0.6.11",
-    "graphql": "^0.12.3",
     "mysql": "^2.13.0"
   }
 }

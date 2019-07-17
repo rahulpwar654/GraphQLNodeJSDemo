@@ -70,6 +70,66 @@ class Bacon extends DAO {
             if (connection != null) connection.release()
         }
     }
+
+
+    /**
+     * Updates a Delete 
+     */
+    static async deleteEntry(_, {id, type, price}) {
+        const connection = await mySQLWrapper.getConnectionFromPool()
+        try {
+
+            await this.delete(connection, {
+                id,
+                data: {
+                    id,
+                    type,
+                    price
+                }
+            })
+
+            return this.id
+        } finally {
+            // Releases the connection
+            if (connection != null) connection.release()
+        }
+    }
+
+
+    /**
+     * Returns a bacon by its ID
+     */
+    static async deleteByID(_, {id}) {
+        return await this.delete(id)
+    }
+
+        /**
+     * Updates a Delete 
+     */
+    static async getAllBecons(_, {id, type, price}) {
+        const connection = await mySQLWrapper.getConnectionFromPool()
+        try {
+
+            // await this.delete(connection, {
+            //     id,
+            //     data: {
+            //         id,
+            //         type,
+            //         price
+            //     }
+            // })
+
+            // return this.id
+
+            return this.findAll()
+        } finally {
+            // Releases the connection
+            if (connection != null) connection.release()
+        }
+    }
+
+
+
 }
 
 module.exports = Bacon

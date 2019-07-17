@@ -1,0 +1,31 @@
+type Query  {
+   test: String,
+   abc: String,
+   students:[Student],
+   colleges:[Colleges],
+   company:[Company],
+   findCompanyByID(id: ID!): Company 
+   findStudentByID(id:ID!): Student  
+}
+
+type Student {
+   id:ID!
+   firstName:String
+   lastName:String
+   password:String 
+   collegeId:String   
+}
+
+type Colleges {
+id:ID!
+name:String 
+rating:Float
+} 
+
+
+type Company { 
+	id:ID! 
+	name:String 
+	location:String 
+	rating:Float 
+}

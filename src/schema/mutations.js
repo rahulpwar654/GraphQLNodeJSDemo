@@ -9,6 +9,7 @@ module.exports = new GraphQLObjectType({
         //for Becon
         addBacon: baconMutation.addBacon,
         updateBacon: baconMutation.updateBacon,
+        
 
         //for Student
         addStudent:  studentMutation.addStudent,
