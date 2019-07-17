@@ -5,7 +5,7 @@ class Composite extends DAO {
    
 
 
-    /**
+    /**npm start 
      * Retrieves a single entry matching the passed ID
      * @param {Number} id - The entry ID
      */
