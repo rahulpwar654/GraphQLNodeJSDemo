@@ -36,9 +36,10 @@ const schema = makeExecutableSchema({typeDefs})
 const fs = require('fs')
 const typeDefs = fs.readFileSync('./src/schema.graphql',{encoding:'utf-8'})
 //const resolvers = require('./src/resolvers.js')
+const resolvers = {}
 
 const {makeExecutableSchema} = require('graphql-tools')
-const schema = makeExecutableSchema({typeDefs})
+const schema = makeExecutableSchema({typeDefs,resolvers})
 
 const  {graphiqlExpress,graphqlExpress} = require('apollo-server-express')
 

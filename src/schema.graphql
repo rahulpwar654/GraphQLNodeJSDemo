@@ -22,6 +22,17 @@ name:String
 rating:Float
 } 
 
+type StudBecon {
+id:ID!
+   firstName:String
+   lastName:String
+   password:String 
+   collegeId:String
+   price:Float   
+   type:String
+} 
+
+
 
 type Company { 
 	id:ID! 
