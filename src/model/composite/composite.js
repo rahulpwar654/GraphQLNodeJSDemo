@@ -1,5 +1,5 @@
 const DAO = require('../../lib/dao')
-const mySQLWrapper = require('../../lib/mysqlWrapper')
+const mysql = require('../../lib/mysqlWrapper')
 
 class Composite extends DAO {
    
@@ -7,9 +7,9 @@ class Composite extends DAO {
 
     /**npm start 
      * Retrieves a single entry matching the passed ID
-     * @param {Number} id - The entry ID
+     * 
      */
-    static async find(id) {
+    static async getStudBecon() {
         return (await mysql.createQuery({
             query: `SELECT * FROM ?? WHERE ?? = ? LIMIT 1;`,
             params: [this.TABLE_NAME, this.PRIMARY_KEY, id]
