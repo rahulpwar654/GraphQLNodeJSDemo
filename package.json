@@ -18,7 +18,7 @@
   "author": "Rahul Pawar",
   "license": "MIT",
   "dependencies": {
-    "apollo-server-express": "^1.4.0",
+    "apollo-server-express": "^2.14.2",
     "body-parser": "^1.17.2",
     "cors": "^2.8.4",
     "express": "^4.15.3",
